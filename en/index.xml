@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ibrahim blog</title>
+    <link>https://www.ibrmo.com/en/</link>
+    <description>Recent content on Ibrahim blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ar</language>
+    <copyright>Unless otherwise stated, all content is licensed under CC BY-NC 2.0.</copyright>
+    <lastBuildDate>Wed, 23 May 2018 03:05:08 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.ibrmo.com/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to become a verified BAT publisher</title>
+      <link>https://www.ibrmo.com/en/post/how-to-become-a-verified-bat-publisher/</link>
+      <pubDate>Wed, 23 May 2018 03:05:08 +0300</pubDate>
+      
+      <guid>https://www.ibrmo.com/en/post/how-to-become-a-verified-bat-publisher/</guid>
+      <description>Ads and tracking software fill the web, which is an important factor in the bad experience of surfing the web sites and constitute a violation of privacy through the continuous tracking of users. That&amp;rsquo;s why browser extensions that block these ads have spread with varying efficiencies and effectiveness in performing that task.
+On the other hand, publishers need a business model that can finance their publishing platforms and ads are the main, if not the only source of revenue.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a custom domain for your GitHub Pages</title>
+      <link>https://www.ibrmo.com/en/post/setting-up-a-custom-domain-for-your-github-pages/</link>
+      <pubDate>Tue, 22 May 2018 03:05:08 +0300</pubDate>
+      
+      <guid>https://www.ibrmo.com/en/post/setting-up-a-custom-domain-for-your-github-pages/</guid>
+      <description>GitHub provides a free static website hosting and GitHub subdomain services. GitHub can get an address for your website with a prefix corresponding to your username if the repository name of your site files has a prefix corresponding to your username and a similar username.github.io.
+For example,
+         username &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ibrmora   repository name &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ibrmora.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.39" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<style>
+
+
+		h1, h2, h3, h4, h5, h6 {
+			letter-spacing: normal;
+		}
+
+		code {
+			font-family: 'Consolas', 'Courier New', Thabit, monospace;
+		}
+
+		code[class*="language-"] {
+			direction: ltr;
+			text-align: left;
+		}
+
+		code::before {
+			display: inline;
+			content: '\200e';
+		}
+
+		code::after {
+			content: '\200e';
+			display: inline;
+		}
+
+		.hljs-comment {
+			direction: reset;
+		}
+</style>
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Ibrahim blog">
+<title>How to become a verified BAT publisher - Ibrahim blog</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href= "/en"><img src="/images/logo.jpg" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">How to become a verified BAT publisher</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="23/05/2018">23/05/2018</time></span>
+			
+			<section class="entry-text" itemprop="entry-text">
+				<p>Ads and tracking software fill the web, which is an important factor in the bad experience of surfing the web sites and constitute a violation of privacy through the continuous tracking of users.
+That&rsquo;s why browser extensions that block these ads have spread with varying efficiencies and effectiveness in performing that task.</p>
+
+<p>On the other hand, publishers need a business model that can finance their publishing platforms and ads are the main, if not the only source of revenue. The inventor of JavaScript, <a href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a>, proposed a solution to the dilemmas. Beginning with the launch of an open-source browser <a href="https://brave.com/ibr162">brave</a>. Brave&rsquo;s main task is to preserve the privacy of the user by blocking the tracking software and provide a wonderful user experience blocking ads effectively.</p>
+
+<p>And then he designed the Ledger system that calculates user attention, and also payment system <a href="https://basicattentiontoken.org">Basic Attention Token</a>  for publishers that allows the user to easily support his favorite content. This program is built into the <a href="https://brave.com/ibr162">brave</a> browser and is available as an add-on for other browsers <a href="https://www.batify.net">https://www.batify.net</a>.</p>
+
+<p>To benefit as a content publisher from the above system you need to verify your website address at <a href="https://publishers.basicattentiontoken.org">https://publishers.basicattentiontoken.org</a>, please follow the explanation below to be able to do so.</p>
+
+<p><img src="/images/post/10002/1.png" alt="post-image-1" /></p>
+
+<p>To start the authentication process click <strong>GET STARTED</strong> button and enter your email address</p>
+
+<p><img src="/images/post/10002/2.png" alt="post-image-2" /></p>
+
+<p>Your access link will be sent to your email address</p>
+
+<p><img src="/images/post/10002/3.png" alt="post-image-3" /></p>
+
+<p>Enter your name to complete the registration process</p>
+
+<p><img src="/images/post/10002/4.png" alt="post-image-4" /></p>
+
+<p>If you want to sign in with two-factor authentication do that option</p>
+
+<p><img src="/images/post/10002/5.png" alt="post-image-5" /></p>
+
+<p>Once signed in, you&rsquo;ll be directed to the home page of your account</p>
+
+<p><img src="/images/post/10002/6.png" alt="post-image-6" /></p>
+
+<p>Click the Add channel button at the top of the page and then choose WEBSITE  card</p>
+
+<p><img src="/images/post/10002/7.png" alt="post-image-7" /></p>
+
+<p>Enter your web address without prefix ibrmo.com</p>
+
+<p><img src="/images/post/10002/8.png" alt="post-image-8" /></p>
+
+<p>Choose <strong>Edit DNS records</strong> verification method</p>
+
+<p><img src="/images/post/10002/9.png" alt="post-image-9" /></p>
+
+<p>Copy the Information box for the Value record</p>
+
+<p>Do not click the <strong>Verify DNS record</strong> button until you have finished adding the record to your website address</p>
+
+<p><img src="/images/post/10002/10.png" alt="post-image-10" /></p>
+
+<p>Create a corresponding record of the data below in your domain address settings with your DNS provider</p>
+
+<table>
+<thead>
+<tr>
+<th align="right">Record Type</th>
+<th align="right">Host</th>
+<th align="right">Value</th>
+<th align="right">TTL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">TXT</td>
+<td align="right">@</td>
+<td align="right">brave-ledger-verification=eaa906fc3f<br>dc1eb317942d71ac0605dac3a10ae2<br>1a4f4520591a67d1d2034ec1</td>
+<td align="right">Automatic</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the command line, make sure that the record is published in the Web</p>
+
+<pre><code class="language-sh">$ nslookup -q=TXT ibrmo.com
+
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+ibrmo.com	text = &quot;v=spf1 include:spf.efwd.registrar-servers.com ~all&quot;
+ibrmo.com	text = &quot;brave-ledger-verification=eaa906fc3fdc1eb317942d71ac0605dac3a10ae21a4f4520591a67d1d2034ec1&quot;
+
+Authoritative answers can be found from:
+</code></pre>
+
+<p>After confirming the posting of the record, click the <strong>Verify DNS record</strong> button, wait for the verification to take place</p>
+
+<p><img src="/images/post/10002/12.png" alt="post-image-12" /></p>
+
+<p>The image below shows that the verification was done correctly</p>
+
+<p><img src="/images/post/10002/13.png" alt="post-image-13" /></p>
+
+<p>Activate your referral link if it&rsquo;s available to you on your main account page</p>
+
+<p><img src="/images/post/10002/14.png" alt="post-image-14" /></p>
+
+<p>Click the <strong>ACTIVATE PROMO</strong>  button</p>
+
+<p><img src="/images/post/10002/15.png" alt="post-image-15" /></p>
+
+<p>Copy the referral link to publish it <a href="https://brave.com/ibr162">https://brave.com/ibr162</a></p>
+
+<p><img src="/images/post/10002/16.png" alt="post-image-16" /></p>
+
+<p>The referral link is also on your account page</p>
+
+<p><img src="/images/post/10002/17.png" alt="post-image-17" /></p>
+
+<p>At the top of the page you find referral link data</p>
+
+<p><img src="/images/post/10002/18.png" alt="post-image-18" /></p>
+
+			</section>
+			<template id="toc-template">
+				<details class="toc">
+					<summary>جدول المحتويات</summary>
+					<p>
+					
+					</p>
+				</details>
+			</template>
+		</article>
+	</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    this.page.identifier = '100021';
+    
+    
+    this.language = "en";
+    };
+    (function() {
+
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ibrmo-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+
+             <span class="link-wrapper"> <a href="https://twitter.com/Ibrahim_Omar_1" target="_blank">Twitter</a></span>
+             <span class="link-wrapper"> <a href="https://github.com/ibrmora" target="_blank">GitHub</a></span>
+            
+             <span class="link-wrapper"> <a href="mailto:ibrahimomar577@gmail.com" target="_blank">Email</a></span> 
+
+		</div>
+		<div class="copyright">Unless otherwise stated, all content is licensed under CC BY-NC 2.0.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', '\x3cYour Google Analytics ID\x3e', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Amiri:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var t = document.querySelector('template#toc-template');
+  var container = document.querySelector('#toc');
+  if (!t || !container) return;
+  var clone = document.importNode(t.content, true);
+  container.innerHTML = '';
+  container.appendChild(clone);
+});
+</script>
+</body>
+</html>

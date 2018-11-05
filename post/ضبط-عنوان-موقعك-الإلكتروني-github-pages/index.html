@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.39" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<style>
+
+		html {
+			direction: rtl;
+		}
+
+
+		h1, h2, h3, h4, h5, h6 {
+			letter-spacing: normal;
+		}
+
+		code {
+			font-family: 'Consolas', 'Courier New', Thabit, monospace;
+		}
+
+		code[class*="language-"] {
+			direction: ltr;
+			text-align: left;
+		}
+
+		code::before {
+			display: inline;
+			content: '\200e';
+		}
+
+		code::after {
+			content: '\200e';
+			display: inline;
+		}
+
+		.hljs-comment {
+			direction: reset;
+		}
+</style>
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="مدوّنة  إِبْرَاهِيمَ">
+<title>ضبط عنوان موقعك الإلكتروني في GitHub Pages - مدوّنة  إِبْرَاهِيمَ</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href= "/"><img src="/images/logo.jpg" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">ضبط عنوان موقعك الإلكتروني في GitHub Pages</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="11/05/2018">11/05/2018</time></span>
+			
+			<section class="entry-text" itemprop="entry-text">
+				<p>يوفر GitHub خدمة استضافة و عنونة المواقع الثابتة مجانا.حيث يُمَكِّنْكَ GitHub من الحصول على عنوان لموقعك الإلكتروني ببادئة مطابقة لاسم المستخدم الخاص بك في حال كان اسم المستودع الحاوي لملفات موقعك ببادئة مطابقة لاسم المستخدم و صيغة مماثلة لـ&nbsp;  <em>username.github.io</em> .</p>
+
+<p>مثال ذلك :</p>
+
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="right"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">اسم المستخدم</td>
+<td align="right"><em>ibrmora</em></td>
+</tr>
+
+<tr>
+<td align="right">اسم المستودع</td>
+<td align="right">&nbsp;    &nbsp;   &nbsp;     &nbsp;  &nbsp;     <em>ibrmora.github.io</em></td>
+</tr>
+
+<tr>
+<td align="right">عنوان الموقع</td>
+<td align="right">&nbsp;    &nbsp;   &nbsp;     &nbsp;   &nbsp;     <em><a href="https://ibrmora.github.io">https://ibrmora.github.io</a></em></td>
+</tr>
+</tbody>
+</table>
+
+<p>عند رغبتك بتسجيل عنوان خاص لموقعك يلزمك القيام بتسجيل عنوانك لدى أحد مزودي خدمة تسجيل العناوين.
+ بعد ذلك سيكون لديك العديد من الخيارات لعنوان موقعك أهمها:</p>
+
+<ul>
+<li>استخدام العنوان الرئيسي &nbsp;  (<em><a href="https://ibrmo.com">https://ibrmo.com</a></em>)
+
+<br /></li>
+</ul>
+
+<p>في هذه الحالة لن تتمكن من استخدام الإتصال الآمن بشكل مباشر من GitHub بل يلزمك استخدام خدمة وسيطة كـ  CloudFlare
+    لتتمكن من إضافة شهادة الإتصال الآمن هناك.</p>
+
+<ul>
+<li>استخدام العنوان الفرعي   &nbsp; (<em><a href="https://www.ibrmo.com">https://www.ibrmo.com</a></em>)</li>
+</ul>
+
+<p>ستتمكن هنا من استخدام الإتصال الآمن من GitHub كما أن إعدادات عنوانين المواقع الإلكترونية بشكل عام توصي باستخدام بادئة www و يمكنك ملاحظة ذلك في المواقع الكبيرة كغوغل.</p>
+
+<p>بعد ذلك قم بإضافة ملف باسم CNAME يحتوي على عنوانك (www.ibrmo.com)  .</p>
+
+<p>الآن يلزمك ضبط إعدادات مزود خدمة تسجيل العناوين على النحو التالي :</p>
+
+<table>
+<thead>
+<tr>
+<th align="right">TTL</th>
+<th align="right">Value</th>
+<th align="right">Host</th>
+<th align="right">Record Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">Automatic</td>
+<td align="right">192.30.252.153</td>
+<td align="right">@</td>
+<td align="right">A</td>
+</tr>
+
+<tr>
+<td align="right">Automatic</td>
+<td align="right">192.30.252.154</td>
+<td align="right">@</td>
+<td align="right">A</td>
+</tr>
+
+<tr>
+<td align="right">Automatic</td>
+<td align="right">ibrmora.github.io.&lrm;</td>
+<td align="right">www</td>
+<td align="right">CNAME</td>
+</tr>
+</tbody>
+</table>
+
+<p>من المهم ألا تقوم بضبط الإعدادات قبل إضافة العنوان إلى الملف CNAME .</p>
+
+<p>لتفعيل الإتصال الآمن قم بالذهاب إلى  القسم الخاص بـ GitHub Pages في إعدادات المستودع وضع علامة صح في خانة تأشير &lrm;.Enforce HTTPS  في حال قمت باختيار العنوان الرئيسي لن يكون هذا الخيار متاحاً.</p>
+
+<p>في كلا الخيارين أعلاه سيقوم GitHub بإعادة توجيه أحد العنوانين إلى الآخر.</p>
+
+<p>مثال ذلك :</p>
+
+<p><a href="http://ibrmo.com">http://ibrmo.com</a>  &nbsp;  سيتم إعادة التوجيه إلى  &nbsp; <a href="https://www.ibrmo.com">https://www.ibrmo.com</a> .</p>
+
+			</section>
+			<template id="toc-template">
+				<details class="toc">
+					<summary>جدول المحتويات</summary>
+					<p>
+					
+					</p>
+				</details>
+			</template>
+		</article>
+	</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    this.page.identifier = '10001';
+    
+    
+    this.language = "ar";
+    };
+    (function() {
+
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ibrmo-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+
+             <span class="link-wrapper"> <a href="https://twitter.com/Ibrahim_Omar_1" target="_blank">Twitter</a></span>
+             <span class="link-wrapper"> <a href="https://github.com/ibrmora" target="_blank">GitHub</a></span>
+            
+             <span class="link-wrapper"> <a href="mailto:ibrahimomar577@gmail.com" target="_blank">Email</a></span> 
+
+		</div>
+		<div class="copyright">كل المحتوى مرخص تحت رخصة CC BY-NC 2.0 ما لم يُنص على غيرها.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', '\x3cYour Google Analytics ID\x3e', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Amiri:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var t = document.querySelector('template#toc-template');
+  var container = document.querySelector('#toc');
+  if (!t || !container) return;
+  var clone = document.importNode(t.content, true);
+  container.innerHTML = '';
+  container.appendChild(clone);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/post/how-to-become-a-verified-bat-publisher/</loc>
+    <lastmod>2018-05-23T03:05:08+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/post/%D9%83%D9%8A%D9%81-%D8%AA%D8%B5%D8%A8%D8%AD-%D9%86%D8%A7%D8%B4%D8%B1-%D9%85%D8%B9%D8%AA%D9%85%D8%AF-%D9%84%D9%80-bat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/post/how-to-become-a-verified-bat-publisher/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/post/setting-up-a-custom-domain-for-your-github-pages/</loc>
+    <lastmod>2018-05-22T03:05:08+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/post/%D8%B6%D8%A8%D8%B7-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D9%85%D9%88%D9%82%D8%B9%D9%83-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A-github-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/post/setting-up-a-custom-domain-for-your-github-pages/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/</loc>
+    <lastmod>2018-05-23T03:05:08+03:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/post/</loc>
+    <lastmod>2018-05-23T03:05:08+03:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.ibrmo.com/en/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://www.ibrmo.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.ibrmo.com/en/tags/"
+                />
+  </url>
+  
+</urlset>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.39" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<style>
+
+		html {
+			direction: rtl;
+		}
+
+
+		h1, h2, h3, h4, h5, h6 {
+			letter-spacing: normal;
+		}
+
+		code {
+			font-family: 'Consolas', 'Courier New', Thabit, monospace;
+		}
+
+		code[class*="language-"] {
+			direction: ltr;
+			text-align: left;
+		}
+
+		code::before {
+			display: inline;
+			content: '\200e';
+		}
+
+		code::after {
+			content: '\200e';
+			display: inline;
+		}
+
+		.hljs-comment {
+			direction: reset;
+		}
+</style>
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="مدوّنة  إِبْرَاهِيمَ">
+<title>تنصيب شهادة SSL شاملة لجميع النطاقات الفرعية لموقعك - مدوّنة  إِبْرَاهِيمَ</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href= "/"><img src="/images/logo.jpg" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">تنصيب شهادة SSL شاملة لجميع النطاقات الفرعية لموقعك</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="28/07/2018">28/07/2018</time></span>
+			
+			<section class="entry-text" itemprop="entry-text">
+				
+
+<p>يُستخدم البرتوكول <strong>HTTPS</strong> لنقل المعلومات المهمة والحساسة كصفحات الويب التي تحتوي على كلمات المرور  بين المستخدم و خادم الويب. حالياً هناك إتجاه إلى استخدامه في جميع اتصالات الويب عوضاً عن البروتوكول <strong>HTTP</strong>  لتوفير اتصال آمن و مشفر لخدمات الويب.
+للدفع قُدماً بهذا الإتجاه يقوم محرك البحث غوغل برفع تصنيف المواقع التي تستخدم البرتوكول <strong>HTTPS</strong>  &rlm;<sup class="footnote-ref" id="fnref:fn1"><a href="#fn:fn1">1</a></sup>&rlm; كما أن المتصفح كروم يعرض تحذير عند تصفح المواقع التي تستخدم البرتوكول <strong>HTTP</strong>  &rlm;  <sup class="footnote-ref" id="fnref:fn2"><a href="#fn:fn2">2</a></sup> &rlm; . في ذات السياق النسخة الحديثة للبرتوكول <strong>HTTP/2</strong> في معظم المتصفحات تدعم فقط الاتصال الآمن <strong>HTTPS</strong>  &rlm;  <sup class="footnote-ref" id="fnref:fn3"><a href="#fn:fn3">3</a></sup> &rlm; .</p>
+
+<p>لتفعيل الاتصال الآمن <strong>HTTPS</strong> للموقع يجب الحصول على شهادة <strong>SSL</strong>  وإضافة النطاق الرئيسي (example.com) وجميع النطاقات الفرعية كل على حدة (www.example.com) داخل الشهادة.</p>
+
+<h2 id="الحصول-على-شهادة-wildcard-ssl-مجانا-من-let-s-encrypt">الحصول على شهادة Wildcard SSL مجاناً من Let&rsquo;s Encrypt</h2>
+
+<p>مؤخراً قامت <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> بدعم الشهادة الشاملة  <a href="https://en.wikipedia.org/wiki/Wildcard_certificate">Wildcard SSL Certificate</a> ) <sup class="footnote-ref" id="fnref:fn4"><a href="#fn:fn4">4</a></sup> ) و سنعرض مثال لذلك باستخدام البرنامج <a href="https://certbot.eff.org/">Certbot</a>.&rlm;</p>
+
+<p>في البداية نقوم بتنصيب البرنامج على نظام التشغيل</p>
+
+<pre><code class="language-sh">$ lsb_release -d
+Description:	Ubuntu 16.04.5 LTS
+
+$ sudo apt-get update
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:certbot/certbot
+$ sudo apt-get update
+$ sudo apt-get install certbot
+
+# In order to request wildcard certificates, you need certbot &gt;= 0.22
+$ certbot  --version
+certbot 0.26.1
+
+</code></pre>
+
+<p>بالأمر أدناه قم باسبتدال النطاق example.com بالنطاق الخاص بك</p>
+
+<pre><code class="language-sh">
+$ certbot  -d *.example.com -d example.com --manual --preferred-challenges=dns --server=https://acme-v02.api.letsencrypt.org/directory  certonly
+
+</code></pre>
+
+<p>سيرشدك البرنامج certbot خلال عملية تسجيل الحساب ، وسيوجهك إلى ما يجب فعله لإكمال عملية التسجيل. للتحقق من النطاق يجب أن ترى شيئًا مثل:</p>
+
+<pre><code class="language-sh">
+-------------------------------------------------------------------------------
+Please deploy a DNS TXT record under the name
+_acme-challenge.example.com with the following value:
+ 
+Fpe7kHxZXrX9Pg28xCkEWy_XXXXXXXXXXXXXX
+ 
+Before continuing, verify the record is deployed.
+-------------------------------------------------------------------------------
+Press Enter to Continue
+
+</code></pre>
+
+<p>تعتمد كيفية نشر سجل TXT على مكان تسجيل نطاقك. بمجرد إكمال سجل الـ TXT ، يجب عليك التحقق من أنه يعمل باستخدام nslookup:</p>
+
+<pre><code class="language-sh">
+$ nslookup -type=TXT _acme-challenge.example.com
+ 
+Server:         192.XXX.XXX.XXX
+Address:        192.XXX.XXX.XXX#XX
+ 
+Non-authoritative answer:
+_acme-challenge.example.com       text = &quot;Fpe7kHxZXrX9Pg28xCkEWy_XXXXXXXXXXXXXX&quot;
+
+</code></pre>
+
+<p>عندما تتحقق من نشر سجل TXT بشكل صحيح ، انتقل إلى التحدي التالي. في النهاية ، سيتم إصدار الشهادة ويجب أن ترى شيئًا مثل:</p>
+
+<pre><code class="language-sh">
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/example.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/example.com/privkey.pem
+   Your cert will expire on 2018-10-12. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot-auto
+   again. To non-interactively renew *all* of your certificates, run
+   &quot;certbot-auto renew&quot;
+ - If you like Certbot, please consider supporting our work by:
+ 
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+</code></pre>
+
+<p>قم بنسخ ملفات الشهادة من المجلد ( &lrm;/etc/letsencrypt/live/example.com&lrm; ) و إضافتها لخادم الويب.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:fn1"><sub><a href="https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html">HTTPS as a ranking signal </a>. &rlm;</sub>
+ <a class="footnote-return" href="#fnref:fn1"><sup>[return]</sup></a></li>
+<li id="fn:fn2"><sub><a href="https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html">A secure web is here to stay</a>. &rlm;</sub>
+ <a class="footnote-return" href="#fnref:fn2"><sup>[return]</sup></a></li>
+<li id="fn:fn3"><sub><a href="https://www.mnot.net/blog/2015/06/15/http2_implementation_status">HTTP/2 Implementation Status</a>. &rlm;</sub>
+ <a class="footnote-return" href="#fnref:fn3"><sup>[return]</sup></a></li>
+<li id="fn:fn4"><sub><a href="https://community.letsencrypt.org/t/acme-v2-and-wildcard-certificate-support-is-live/55579">ACME v2 and Wildcard Certificate Support is Live</a>. &rlm;</sub>
+ <a class="footnote-return" href="#fnref:fn4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+			</section>
+			<template id="toc-template">
+				<details class="toc">
+					<summary>جدول المحتويات</summary>
+					<p>
+					<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#الحصول-على-شهادة-wildcard-ssl-مجانا-من-let-s-encrypt">الحصول على شهادة Wildcard SSL مجاناً من Let&rsquo;s Encrypt</a></li>
+</ul></li>
+</ul>
+</nav>
+					</p>
+				</details>
+			</template>
+		</article>
+	</main>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    this.page.identifier = '10007';
+    
+    
+    this.language = "ar";
+    };
+    (function() {
+
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ibrmo-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+
+             <span class="link-wrapper"> <a href="https://twitter.com/Ibrahim_Omar_1" target="_blank">Twitter</a></span>
+             <span class="link-wrapper"> <a href="https://github.com/ibrmora" target="_blank">GitHub</a></span>
+            
+             <span class="link-wrapper"> <a href="mailto:ibrahimomar577@gmail.com" target="_blank">Email</a></span> 
+
+		</div>
+		<div class="copyright">كل المحتوى مرخص تحت رخصة CC BY-NC 2.0 ما لم يُنص على غيرها.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', '\x3cYour Google Analytics ID\x3e', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Amiri:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/vs.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var t = document.querySelector('template#toc-template');
+  var container = document.querySelector('#toc');
+  if (!t || !container) return;
+  var clone = document.importNode(t.content, true);
+  container.innerHTML = '';
+  container.appendChild(clone);
+});
+</script>
+</body>
+</html>
